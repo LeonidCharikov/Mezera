@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        File file = new File("M:\p.txt");
+        File file = new File("C:\\m.txt");
         try{
             Scanner in = new Scanner(new FileInputStream(file)); 
            int slova = 0;
