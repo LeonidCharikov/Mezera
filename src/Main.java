@@ -7,32 +7,35 @@ import java.io.InputStreamReader;
 import java.io.InterruptedIOException;
 import java.io.Reader;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Main {
 
-      public static void main(String[] args) throws IOException {
-        // TODO Auto-generated method stub
-
-        File file = new File("C:\\m.txt");
+	  public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+   
+		File file = new File("C:\\m.txt");
         FileInputStream stream = new FileInputStream(file);
         InputStreamReader in = new InputStreamReader(stream);
-        BufferedReader reader = new BufferedReader(in);
-
-
-        String txt;
-        int slovo = 0;
-        int mezera = 0;
-
-          while((txt = reader.readLine()) != null) {
-              String[] counter = txt.split("\\s+");
+		BufferedReader reader = new BufferedReader(in);
+		
+		
+		String txt;
+		int slovo = 0;
+		int mezera = 0;
+		
+		  while((txt = reader.readLine()) != null) {
+		char [] arr = txt.toCharArray();
+			   for(int i=0;i<txt.length();i++) {
+			   if(Character.isWhitespace(arr[i]))
+				   mezera++;
+			   }
+			  String[] counter = txt.split("\\s+");
               slovo = slovo + counter.length;
-              mezera += slovo -1;
-          }
-        System.out.println("Pocet mezer: " + mezera);
-          System.out.println("Pocet slov: " + slovo);
-
-
-    }
-
-}
+              
+		System.out.println("Pocet mezer: " + mezera);
+		  System.out.println("Pocet slov: " + slovo);
+		
+		
+	}
+	  
+}}
